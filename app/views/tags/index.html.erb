@@ -1,0 +1,14 @@
+<h1>Click to Edit Tags</h1>
+
+<ul id="tags">
+	<% @tags.each do |tag| %>
+		<li>
+			<%= link_to tag.name, edit_tag_path(tag), class: 'tag_name', id: "tag_#{tag.id}" %>
+		</li>
+	<% end %>
+</ul>
+
+
+
+
+
