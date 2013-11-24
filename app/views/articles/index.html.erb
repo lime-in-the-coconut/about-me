@@ -1,4 +1,4 @@
-<h1>All My Stuff</h1>
+<h1>Here There Be Dragons</h1>
 
 <ul id="articles">
 	<% @articles.each do |article| %>
@@ -9,5 +9,5 @@
 </ul>
 
 <% if logged_in? %>
-	<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+	<%= link_to "create more treasures", new_article_path, class: "new_article" %>
 <% end %>
