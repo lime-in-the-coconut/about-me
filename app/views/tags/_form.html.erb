@@ -4,14 +4,22 @@
     <li><%= error %></li>
   <% end %>
   </ul>
-  <p>
-    <%= f.label :Tag %><br />
-    <%= f.text_field :name %>
+    <% if logged_in? %>
+      <p>
+        <%= f.label :Tag %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+      <p>
+        
+        	<%= link_to "delete", tag_path, method: :delete, data: {confirm: "You sure you want to COMPLETELY scrap this?"} %>
   </p>
+    <% else %>You must be logged in to edit this tag
+    <% end %>
+    <br/>
   <p>
-    <%= f.submit %>
-  </p>
-  <p>
-  	<%= link_to "delete", tag_path, method: :delete, data: {confirm: "You sure you want to COMPLETELY scrap this?"} %>
+    <%= link_to "<<Back to Articles List", articles_path %>
   </p>
 <% end %>
