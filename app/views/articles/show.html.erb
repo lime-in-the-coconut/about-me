@@ -7,13 +7,13 @@
 	</p>
 	<p>
 	  <% if @article.image.exists? %>
-	  	<%= image_tag @article.image.url %><br/>
+	  	<%= image_tag @article.image.url(:small) %><br/>
 	  <% end %>
 	</p>
 
 	<p><%= @article.body %></p>
 
-	<h3><% @article.comments.size %></h3>
+	<h5><% @article.comments.size %></h5>
 
 		<%= render partial: 'articles/comment', collection: @article.comments %>
 
