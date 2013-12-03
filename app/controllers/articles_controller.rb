@@ -1,10 +1,11 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
+	
 
 before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@articles = Article.all
+		@articles = Article.order(:title).page(params[:page])
 	end
 
 	def show
@@ -46,5 +47,11 @@ before_filter :require_login, only: [:new, :create, :edit, :update, :destroy]
 		flash.notice = "Article '#{@article.title}' is much better now!"
 
 		redirect_to article_path(@article)
+	end
+
+	def remove_image
+		@article = Article.find(params[:id])
+		@article.image.destroy
+		redirect_to edit_article_path(@article)
 	end
 end

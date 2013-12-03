@@ -2,7 +2,7 @@ Blogger::Application.routes.draw do
   root to: 'articles#index'
 
   resources :articles do
-    resources :comments
+  resources :comments
   end
   resources :tags
   resources :authors
@@ -10,7 +10,8 @@ Blogger::Application.routes.draw do
 
   get 'login'  => 'author_sessions#new'
   get 'logout' => 'author_sessions#destroy'
-  delete "article/remove_image"
+
+  delete 'articles/remove_image/:id' => "articles#remove_image", as: :remove_image
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

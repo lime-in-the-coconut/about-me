@@ -20,9 +20,11 @@
     <% if @article.image.exists? %>
       <%= image_tag @article.image.url(:small) %><br/>
     <% end %>
-  
-      <%= f.label :image, "Attach a New Image" %><br />
+      <%= f.label :image, "Attach/Change Image" %><br />
       <%= f.file_field :image %>
+      <% if @article.image.exists? %><hr/>
+      <%= link_to "Delete Your Image", remove_image_path(@article), method: :delete %>
+      <% end %>
   </p><hr />
   <p>
     <%= f.submit %>

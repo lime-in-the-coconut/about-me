@@ -42,7 +42,11 @@ end
 	
 	gem 'paperclip'
 
+	gem 'aws-sdk'
+
 	gem 'sorcery'
+
+	gem 'kaminari'
 
 	
 # Use ActiveModel has_secure_password

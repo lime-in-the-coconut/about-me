@@ -6,7 +6,9 @@
 			<%= link_to article.title, article_path(article), class: 'article_title', id: "article_#{article.id}" %>
 		</li>
 	<% end %>
-</ul>
+</ul><hr/>
+
+<%=paginate @articles %>
 
 <% if logged_in? %>
 	<%= link_to "create more treasures", new_article_path, class: "new_article" %>

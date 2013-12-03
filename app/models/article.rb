@@ -1,4 +1,6 @@
 class Article < ActiveRecord::Base
+	paginates_per 3
+	
 	has_many :comments
 	has_many :taggings
 	has_many :tags, through: :taggings
