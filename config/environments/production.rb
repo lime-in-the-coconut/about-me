@@ -77,7 +77,7 @@ Blogger::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-end
+
 
   config.paperclip_defaults = {
   :storage => :s3,
@@ -87,3 +87,4 @@ end
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
+end
